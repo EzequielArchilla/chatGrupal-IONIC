@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div class="container">
+      <div>
+        <span class="texto">Nombre</span>
+        <input type="text" class="inputText" [(ngModel)]="nombre" [ngModelOptions]="{standalone: true}" required>
+      </div>
+      <div>
+        <span class="texto">Apellido</span>
+        <input type="text" class="inputText" [(ngModel)]="apellido" [ngModelOptions]="{standalone: true}" required>
+      </div>
+      <div>
+        <span class="texto">Mail</span>
+        <input type="text" class="inputText" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" required>
+      </div>
+      <div>
+        <span class="texto">Contraseña</span>
+        <input type="password" class="inputText" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" required>
+      </div>    
+      
+    <ion-row>
+      <ion-col> 
+      <ion-button class="bottom" type="submit" color="tertiary" (click)="signUp()" expand="block">Aceptar</ion-button>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>
