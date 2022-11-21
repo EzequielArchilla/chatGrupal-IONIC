@@ -1,0 +1,40 @@
+.message-input {
+    width: 100%;
+    border: 1px solid var(--ion-color-medium);
+    border-radius: 6px;
+    background: rgb(0, 0, 0);
+    resize: none;
+    margin-top: 0px;
+    --padding-start: 8px;
+}
+
+.message {
+    padding: 10px !important;
+    border-radius: 10px !important;
+    margin-bottom: 4px !important;
+    white-space: pre-wrap;
+}
+
+.my-message {
+    background: rgb(231, 213, 21);;
+    color: rgb(22, 22, 22);
+}
+
+.other-message {
+    background: rgb(182, 126, 5);;
+    color: rgb(22, 22, 22);
+}
+
+.time {
+    color: #dfdfdf;
+    float: right;
+    font-size: small;
+}
+
+.creador{
+    color:rgb(45, 46, 48);
+}
+
+.bg-color{
+    --background: rgb(200, 188, 54);
+}

@@ -28,8 +28,16 @@ const routes: Routes = [
     loadChildren: () => import('./main/main.module').then( m => m.MainPageModule)
   },
   {
-    path: 'chat',
-    loadChildren: () => import('./chat/chat.module').then( m => m.ChatPageModule)
+    path: 'seleccionar-grupo',
+    loadChildren: () => import('./seleccionar-grupo/seleccionar-grupo.module').then( m => m.SeleccionarGrupoPageModule)
+  },
+  {
+    path: 'chat4-a',
+    loadChildren: () => import('./chat4-a/chat4-a.module').then( m => m.Chat4APageModule)
+  },
+  {
+    path: 'chat4-b',
+    loadChildren: () => import('./chat4-b/chat4-b.module').then( m => m.Chat4BPageModule)
   },
 ];
 

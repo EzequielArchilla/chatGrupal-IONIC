@@ -13,11 +13,13 @@ import { Usuario } from '../clases/usuario';
 })
 export class UsuarioService {
   private usuariosRef: AngularFirestoreCollection;
-  private mensajesRef: AngularFirestoreCollection;
+  private mensajesARef: AngularFirestoreCollection;
+  private mensajesBRef: AngularFirestoreCollection;
 
   constructor(private db: AngularFirestore) {
     this.usuariosRef = this.db.collection('usuarios');
-    this.mensajesRef = this.db.collection('mensajes');
+    this.mensajesARef = this.db.collection('mensajesA');
+    this.mensajesBRef = this.db.collection('mensajesB');
   }
 
   public crearUsuario(usuario: Usuario) {
@@ -48,25 +50,49 @@ export class UsuarioService {
     );
   }
 
-  addChatMessage(mensaje:string, usuario:Usuario) {
-    return this.mensajesRef.add({
+  addChatMessage(mensaje:string, usuario:Usuario, aula:string) {
+    if(aula == 'a'){
+    return this.mensajesARef.add({
       mensaje: mensaje,
       usuario: {...usuario},
       createdAt: new Date()
-    });
+    });}
+    if(aula == 'b')
+    {return this.mensajesBRef.add({
+      mensaje: mensaje,
+      usuario: {...usuario},
+      createdAt: new Date()
+    });}
   }
   
-  getChatMessages() {
-    return this.mensajesRef.snapshotChanges().pipe(
-      map((actions) =>
-        actions.map((a: any) => {
-          const data = a.payload.doc.data() as any;
-          const fechaCreacionParseada = a.payload.doc.data().createdAt.toDate()
-          const id = a.payload.doc.id;
-          return { id, fechaCreacionParseada,...data };
-        })
-      )
-    );
+  getChatMessages(aula:string) {
+    if(aula == 'a')
+    {
+      return this.mensajesARef.snapshotChanges().pipe(
+        map((actions) =>
+          actions.map((a: any) => {
+            const data = a.payload.doc.data() as any;
+            const fechaCreacionParseada = a.payload.doc.data().createdAt.toDate()
+            const id = a.payload.doc.id;
+            return { id, fechaCreacionParseada,...data };
+          })
+        )
+      );
+    }
+    if(aula == 'b')
+    {
+      return this.mensajesBRef.snapshotChanges().pipe(
+        map((actions) =>
+          actions.map((a: any) => {
+            const data = a.payload.doc.data() as any;
+            const fechaCreacionParseada = a.payload.doc.data().createdAt.toDate()
+            const id = a.payload.doc.id;
+            return { id, fechaCreacionParseada,...data };
+          })
+        )
+      );
+    }
+
   }
   
   private getUserForMsg(msgFromId, users: Usuario[]): string {

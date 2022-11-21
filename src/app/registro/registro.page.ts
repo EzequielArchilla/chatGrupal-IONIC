@@ -78,7 +78,7 @@ export class RegistroPage implements OnInit {
               this.successToast();
               this.authService.usuarioLogueado = this.usuario;
               this.authService.logueado = true;
-              this.navigateTo('chat');
+              this.navigateTo('/seleccionar-grupo');
             })
           });
         })

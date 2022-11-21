@@ -23,6 +23,9 @@ export class IngresoPage implements OnInit {
   password: string;
   spinnerHidden: boolean;
   usuario: Usuario;
+  classImg1:string = '';
+  classImg2:string = '';
+  classImg3:string = '';
 
   constructor(
     private toastController: ToastController,
@@ -74,7 +77,7 @@ export class IngresoPage implements OnInit {
             this.authService.logueado = true;
           });
         this.successToast();
-        this.navigateTo('/chat');
+        this.navigateTo('/seleccionar-grupo');
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -89,14 +92,17 @@ export class IngresoPage implements OnInit {
       case 1:
         this.email = 'usuario1@gmail.com';
         this.password = '12345678';
+        this.classImg1 = 'clickImg';
         break;
       case 2:
         this.email = 'usuario2@gmail.com';
         this.password = '12345678';
+        this.classImg2 = 'clickImg';
         break;
       case 3:
         this.email = 'usuario3@gmail.com';
         this.password = '12345678';
+        this.classImg3 = 'clickImg';
         break;
     }
     this.signIn();
@@ -161,5 +167,12 @@ export class IngresoPage implements OnInit {
     });
 
     await picker.present();
+  }
+
+  ionviewDidExit()
+  {
+    this.classImg1 = '';
+    this.classImg2 = '';
+    this.classImg3 = '';
   }
 }

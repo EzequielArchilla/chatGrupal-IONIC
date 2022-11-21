@@ -1,6 +1,6 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>Open Chat</ion-title>
+  <ion-toolbar class="bg-color">
+    <ion-title>Chat 4°A</ion-title>
     <ion-buttons slot="end">
       <ion-button fill="clear" (click)="signOut()">
         <ion-icon name="log-out" slot="icon-only"></ion-icon>
@@ -16,10 +16,10 @@
       <ion-col size="9" class="message"
         [offset]="message.usuario.id == usuario.id ? 3 : 0"
         [ngClass]="{ 'my-message': message.usuario.id == usuario.id, 'other-message': message.usuario.id != usuario.id }">
-        <b>{{ message.usuario.nombre }}</b><br>
+        <b class="creador">{{ message.usuario.nombre }}</b><br>
         <span>{{ message.mensaje }}
         </span>
-        <div class="time ion-text-right"><br>{{ message.fechaCreacion | date:'short' }}</div>
+        <div class="time ion-text-right"><br>{{ message.fechaCreacionParseada | date:'short'}}</div>
       </ion-col>
     </ion-row>
   </ion-grid>
@@ -27,16 +27,15 @@
 </ion-content>
 
 <ion-footer>
-  <ion-toolbar color="light">
+  <ion-toolbar class="bg-color">
     <ion-row class="ion-align-items-center">
       <ion-col size="10">
-        <ion-textarea autoGrow="true" class="message-input" rows="1" maxLength="500" [(ngModel)]="nuevoMensaje" >
+        <ion-textarea maxlength="21" autoGrow="true" class="message-input" rows="1" maxLength="500" [(ngModel)]="nuevoMensaje" >
         </ion-textarea>
       </ion-col>
       <ion-col size="2">
-        <ion-button expand="block" color="secondary" [disabled]="nuevoMensaje === ''"
-          class="msg-btn" (click)="sendMessage()">
-          <ion-icon name="arrow-forward-outline"></ion-icon>
+        <ion-button [disabled]="nuevoMensaje === ''" (click)="sendMessage()">
+          <ion-icon slot="icon-only" name="send"></ion-icon>
         </ion-button>
       </ion-col>
     </ion-row>
