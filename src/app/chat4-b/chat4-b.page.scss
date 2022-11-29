@@ -16,12 +16,12 @@
 }
 
 .my-message {
-    background: var(--ion-color-tertiary);
+    background: rgb(22, 186, 55);
     color: #fff;
 }
 
 .other-message {
-    background: var(--ion-color-secondary);
+    background: rgb(18, 106, 61);
     color: #fff;
 }
 
@@ -30,3 +30,15 @@
     float: right;
     font-size: small;
 }
+
+.bg-color{
+    --background: rgb(88, 172, 129);
+}
+
+ion-content{
+    --overflow:hidden;
+    --background: none;
+    background: url("../../assets/Meteor.png");
+    background-size: cover;
+    background-position: center center;              
+  }

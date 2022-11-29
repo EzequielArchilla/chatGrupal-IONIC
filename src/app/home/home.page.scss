@@ -45,3 +45,11 @@
     height: 20vh;
     font-weight: bolder;
   }
+
+  ion-content{
+    --overflow:hidden;
+    --background: none;
+    background: url("../../assets/Meteor.png");
+    background-size: cover;
+    background-position: center center;              
+  }

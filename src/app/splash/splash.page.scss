@@ -6,6 +6,16 @@ img{
     display: block;
 }
 
+
+ion-content{
+  --overflow:hidden;
+  --background: none;
+  background: url("../../assets/Meteor.png");
+  background-size: cover;
+  background-position: center center;              
+}
+
+
 ion-text{
     font-size: 20px;
     padding-top:10%;

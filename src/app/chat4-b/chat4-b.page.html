@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar class="bg-color">
     <ion-title>Chat 4°B</ion-title>
     <ion-buttons slot="end">
       <ion-button fill="clear" (click)="signOut()">
@@ -27,7 +27,7 @@
 </ion-content>
 
 <ion-footer>
-  <ion-toolbar color="light">
+  <ion-toolbar class="bg-color">
     <ion-row class="ion-align-items-center">
       <ion-col size="10">
         <ion-textarea maxlength="21" autoGrow="true" class="message-input" rows="1" maxLength="500" [(ngModel)]="nuevoMensaje" >

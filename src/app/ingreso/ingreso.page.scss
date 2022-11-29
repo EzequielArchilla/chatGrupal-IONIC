@@ -69,3 +69,11 @@ ion-button{
         transform:rotate(360deg);
     }
 }
+
+ion-content{
+    --overflow:hidden;
+    --background: none;
+    background: url("../../assets/Meteor.png");
+    background-size: cover;
+    background-position: center center;              
+  }

@@ -38,3 +38,11 @@
 .bg-color{
     --background: rgb(200, 188, 54);
 }
+
+ion-content{
+    --overflow:hidden;
+    --background: none;
+    background: url("../../assets/Meteor.png");
+    background-size: cover;
+    background-position: center center;              
+  }
